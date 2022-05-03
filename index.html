@@ -16,20 +16,24 @@
             padding: 2em;
             background-color: #b8aa82;
             border-radius: 0.5em;
-            box-shadow: 2px 3px 7px 2px rgb(0, 0, 0 / 2%);
+            box-shadow: 2px 3px 7px 2px rgb(0 0 0 / 2%);
         }
 
-        a {
+        a, button {
             color: #fff;
             text-decoration: none;
             background-color: #7b633f;
             padding: 0.4em;
             border-radius: 0.5em;
+            border: 0px;
+            font-size: 16px;
         }
 
         @media screen and (max-width: 700px) {
             div {
                 width: calc(100% - 70px);
+                margin: 0 auto;
+                width: auto;
             }
         }
     </style>
@@ -39,9 +43,17 @@
         <h1>게임을 플레이하거나 이 게임에 대해서 살펴보세요.</h1>
         <p>하단 버튼을 누르면 해당패이지로 링크됩니다.</p>
         <p>
-            <a href="./play.html">플레이</a>
+            <button onclick="play()">플레이</button>
             <a href="./explan.html">설명</a>
         </p>
     </div>
+    <script>
+        function play() {
+            let ans = confirm("설명을 먼저 보는 것을 추천합니다. 계속하시겠습니까?")
+            if (ans == true) {
+                location.href = "./play.html"
+            }
+        }
+    </script>
 </body>
 </html>
